@@ -19,7 +19,7 @@ public class Sonda implements Observer {
 		if (this.livelloFumo >= 5) {
 			String notificaUrl = generaUrlNotifica();
 			System.out.println("ALLARME!!! La sonda n. " + id + " ha registrato un livello di fumo di " + livelloFumo
-					+ "una temperatura di " + temperatura + ", latitudine: " + latitudine + " longitudine: "
+					+ " una temperatura di " + temperatura + ", latitudine: " + latitudine + " longitudine: "
 					+ longitudine);
 
 			System.out.println("URL di notifica per il personale: " + notificaUrl);

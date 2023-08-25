@@ -3,12 +3,10 @@ package lucaguerra.entities;
 import java.util.ArrayList;
 import java.util.List;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lucaguerra.interfaces.Observer;
 import lucaguerra.interfaces.Subject;
 
-@AllArgsConstructor
 @Data
 public class CentroDiControllo implements Subject {
 
