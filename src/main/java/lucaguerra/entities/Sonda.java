@@ -14,6 +14,11 @@ public class Sonda implements Observer {
 	private int livelloFumo;
 	private String temperatura;
 
+	public String generaUrlNotifica() {
+		return "http://host/alarm?idsonda=" + id + "&lat=" + latitudine + "&lon=" + longitudine + "&smokelevel="
+				+ livelloFumo + "&temp=" + temperatura;
+	}
+
 	@Override
 	public void controlloLivelloFumo() {
 		if (this.livelloFumo >= 5) {
@@ -28,12 +33,5 @@ public class Sonda implements Observer {
 			System.out.println("La sonda n. " + id + " non ha registrato problemi di livello di fumo.");
 			System.out.println();
 		}
-
 	}
-
-	public String generaUrlNotifica() {
-		return "http://host/alarm?idsonda=" + id + "&lat=" + latitudine + "&lon=" + longitudine + "&smokelevel="
-				+ livelloFumo + "&temp=" + temperatura;
-	}
-
 }
