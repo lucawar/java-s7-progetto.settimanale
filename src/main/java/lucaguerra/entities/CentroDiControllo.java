@@ -5,12 +5,12 @@ import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import lucaguerra.interfaces.Observer;
+import lucaguerra.interfaces.Subject;
 
-@NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class CentroDiControllo {
+public class CentroDiControllo implements Subject {
 
 	private Long id;
 
@@ -19,4 +19,21 @@ public class CentroDiControllo {
 	public CentroDiControllo(Long id) {
 		this.id = id;
 	}
+
+	@Override
+	public void registra(Observer o) {
+		listaSonde.add((Sonda) o);
+
+	}
+
+	@Override
+	public void osservaNotifiche() {
+		System.out.println();
+		System.out.println("OSSERVAZIONE NOTIFICHE DEL CENTRO DI CONTROLLO N°:" + id);
+		System.out.println();
+		for (Sonda s : listaSonde) {
+			s.controlloLivelloFumo();
+		}
+	}
+
 }
